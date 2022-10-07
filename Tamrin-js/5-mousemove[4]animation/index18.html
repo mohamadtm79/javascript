@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+        }
+        #bull{
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+
+        }
+        .stone{
+            border-radius: 50%;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            /* animation-fill-mode: both; */
+            animation: linear infinite;
+            width: 20px;
+            height: 20px;
+        }
+        @keyframes para1{
+            0%{
+                left: -10%;
+            }
+            100%{
+                left: 100%;
+
+            }
+        }
+
+
+        @keyframes para2{
+            0%{
+                top: -10%;
+            }
+            100%{
+                top: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div id="bull"></div>
+
+    </main>
+
+    
+
+
+    <script>
+        let main_ = document.getElementsByTagName('main')[0]
+        let _bull = document.getElementById('bull')
+        let All_div = document.querySelectorAll('main>div');
+        let x , y
+        let conter = 0
+        let div_rand2 , div_rand
+        let temp = setInterval(mohamad, 100)
+        function mohamad(){
+            conter++
+
+            if(conter == 200){
+                clearInterval(temp)
+                main_.style.backgroundColor = "red"
+            }
+            apend()
+
+            mouse(div_rand,div_rand2)
+            
+            randomDiv(div_rand,div_rand2)
+        }
+        // main ساخت المان و اضافه کردن ان به 
+        function apend(){
+            let _div2 = document.createElement('div')
+
+            _div2.classList.add("stone")
+
+            div_rand2 = document.getElementsByTagName('main')[0].appendChild(_div2)
+
+            div_rand2.style.animationName = 'para2'
+
+
+            let _div = document.createElement('div')
+
+            _div.classList.add("stone")
+
+            div_rand = document.getElementsByTagName('main')[0].appendChild(_div)
+
+            div_rand.style.animationName =  'para1'
+
+            
+        }
+        // mousemove
+        function mouse(xd,yd){
+            main_.addEventListener('mousemove',(e)=>{
+                x = e.clientX / -20
+                y = e.clientY / -20
+                xd.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
+            })
+            main_.addEventListener('mousemove',(e)=>{
+                x = e.clientX / 20
+                y = e.clientY / 20
+                yd.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
+            })
+        }
+
+        //ساخت divهای رندوم 
+        function randomDiv(x , y){
+            let _random = parseInt(Math.random() * 9 + 3)
+
+            x.style.animationDuration = _random + 's'
+            // رندوم از 1 تا %90 
+            let _Top_rand = parseInt(Math.random() * 100 + 1);
+
+            x.style.top = _Top_rand + '%'
+
+
+                        
+            let _random2 = parseInt(Math.random() * 9 + 3)
+            
+            y.style.animationDuration = _random2 + 's'
+
+            let _left_rand2 = parseInt(Math.random() * 100 + 1);
+
+            y.style.left = _left_rand2 + '%'
+        }
+        main_.addEventListener('mousemove',(e)=>{
+            x = e.clientX
+            y = e.clientY
+            _bull.style.top = y + 'px'
+            _bull.style.left = x + 'px'
+        })
+        //به روش 2وم اضافه کردن المان به تعداد دلخواه
+        // for (let i = 0; i < 200; i++) {
+        //     let _div2 = document.createElement('div')
+
+        //     _div2.classList.add("stone")
+
+        //     let div_rand2 = document.getElementsByTagName('main')[0].appendChild(_div2)
+        //     main_.addEventListener('mousemove',(e)=>{
+        //         x = e.clientX / -20
+        //         y = e.clientY / -20
+        //         console.log(x , y);
+        //         div_rand2.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
+        //     })
+
+            
+        //     div_rand2.style.animationName = 'para2'
+            
+        //     let _random2 = parseInt(Math.random() * 20 + 3)
+            
+        //     div_rand2.style.animationDuration = _random2 + 's'
+
+        //     let _left_rand2 = parseInt(Math.random() * 100 + 1);
+
+        //     div_rand2.style.left = _left_rand2 + '%'
+        // }
+
+
+        // let rand = parseInt(Math.random() * 9 + 4)
+        // item.style.animationDuration = rand + 's'
+        // let _left_rand = parseInt(Math.random() * 90 + 1)
+        // item.style.left = _left_rand + "%"
+
+
+        
+
+        // انتخواب بکگراند به صورت رندوم
+        // let list = ['red', 'green', 'blue','yellow']
+        // let m = list[parseInt(Math.random() * list.length)]
+        // _bull.style.backgroundColor = m
+        // console.log(m);
+
+
+
+
+
+
+       
+
+    </script>
+</body>
+</html>

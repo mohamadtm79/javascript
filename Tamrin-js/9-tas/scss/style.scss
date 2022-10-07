@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #181818;
+    >div{
+        width: 40%;
+        height: 86%;
+        background-color: black;
+        color: antiquewhite;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
+        >button{
+            position: absolute;
+            top: 11%;
+            background-color: transparent;
+            color: #fff;
+            left: 43%;
+            border: none;
+            font-size: 43px;
+        }
+    }
+    #div1{
+        margin-right: 20px;
+
+    }
+    #div2{
+        margin-left: 20px;
+    }
+    >h1{
+        position: absolute;
+        color: #f0f8ff52;
+        bottom: 11%;
+    }
+}

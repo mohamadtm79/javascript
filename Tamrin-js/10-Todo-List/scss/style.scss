@@ -1,0 +1,63 @@
+/* Background styles */
+body {
+    background-color: #000000 !important;
+    background-image: radial-gradient(at 47% 33%, hsl(122deg 65% 35%) 0, transparent 59%), radial-gradient(at 82% 65%, hsl(214deg, 100%, 68%) 0, transparent 55%);
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    >.card{
+        width: 67%;
+        height: 95%;
+        // background-color: aqua;
+        overflow: overlay;
+        backdrop-filter: blur(25px) saturate(200%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%);
+        background-color: rgba(17, 25, 40, 0.62);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        >ul>li{
+            list-style: none;
+            color: aliceblue;
+            background: #00000080;
+        }>div{
+            padding: 17px 41px;
+            background: #0706064f;
+        }
+        >button:nth-of-type(2){
+            display: none;
+        }
+        span{
+            cursor: pointer;
+        }
+        >.Add-input{
+            width: 100%;
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            >h1{
+                width: 100%;
+                text-align: center;
+                color: #fff;
+            }
+            >input{
+                width: 60%;
+                font-size: 39px;
+                height: 49px;
+                border: 0;
+                outline: 0;
+            }
+            >button{
+                width: 9%;
+                height: 52px;
+                margin-left: 26px;
+            }
+            >button:nth-of-type(2){
+                display: none;
+            }
+
+        }
+    }
+}

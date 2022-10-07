@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section > h2 {
+  font-size: 200px;
+  position: absolute;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  z-index: 3;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+section > h1 {
+  position: fixed;
+  transition: 1s;
+  background-image: url(../img/Succodesign-Love-Is-In-The-Web-Heart.ico);
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes heart {
+  0% {
+    transform: scale(0);
+    opacity: 100%;
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.7);
+  }
+  70% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.7);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0);
+    opacity: 100%;
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.7);
+  }
+  70% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.7);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
